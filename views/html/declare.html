@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../css/declare.css">
+
+
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/declare.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+    <title>个人健康情况申报</title>
+</head>
+
+<body>
+    <div class="container-fuild" style="height: 100%;">
+        <div class="row" style="height:10%;">
+                <h1 align="center" class="hs">&emsp;疫情期间个人健康情况申报系统</h1>
+
+        </div>
+        <div class="row" style="height:10%;">
+                <h1 align="center" class="sm">&emsp;填报界面</h1>
+        </div>
+
+        <div class="container" style="height: 80%;">
+            <form role="form">
+                <div class="form-group">
+                    <label for="subname">姓名</label>
+                    <input type="text" class="form-control" id="subname" placeholder="请输入姓名">
+                </div>
+                <div class="form-group">
+                    <label for="subidnumber">身份证号</label>
+                    <input type="text" class="form-control" id="subidnumber" placeholder="请输入身份证号">
+                </div>
+                <div class="form-group">
+                    <label for="subid">用户名</label>
+                    <input type="text" class="form-control" id="subid" placeholder="请输入用户名">
+                </div>
+                <div class="form-group">
+                    <label for="subphone_number">手机号</label>
+                    <input type="text" class="form-control" id="subphone_number" placeholder="请输入手机号">
+                </div>
+                <div class="form-group">
+                    <label for="subcity">城市</label>
+                    <input type="text" class="form-control" id="subcity" placeholder="请输入城市名">
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label class="control-label" for="subacademy">社区选择：</label>
+                        <select id="subacademy" class="form-control" vlue="请选择单位/院系">
+                            <option value='0' selected>请选择社区</option>
+                            <option>一号社区</option>
+                            <option>二号社区</option>
+                            <option>三号社区</option>
+                            <option>四号社区</option>
+                            <option>五号社区</option>
+                            <option>六号社区</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label class="control-label" for="subhigh_region">七天内受否有高低风险旅居史、接触史</label>
+                        <select id="subhigh_region" class="form-control" vlue="请选择七天内受否有高低风险旅居史、接触史">
+                            <option value='0' selected>请选择七天内受否有高低风险旅居史、接触史</option>
+                            <option>是</option>
+                            <option>否</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label class="control-label" for="subisolation">是否隔离观察</label>
+                        <select id="subisolation" class="form-control" vlue="是否隔离观察">
+                            <option value='0' selected>请选择是否隔离观察</option>
+                            <option>是</option>
+                            <option>否</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label class="control-label" for="subtypical_symptoms">是否身体有疑似典型症状</label>
+                        <select id="subtypical_symptoms" class="form-control" vlue="是否身体有疑似典型症状">
+                            <option value='0' selected>请选择是否身体有疑似典型症状</option>
+                            <option>是</option>
+                            <option>否</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label class="control-label" for="subfever">是否发热</label>
+                        <select id="subfever" class="form-control" vlue="是否是否发热">
+                            <option value='0' selected>请选择是否发热</option>
+                            <option>是</option>
+                            <option>否</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subdestination">其他信息</label>
+                    <input type="text" class="form-control" id="subother" placeholder="请输入其他信息">
+                </div>
+                <div class="form-group">
+                    <label for="subtemperature_morning">体温（早）</label>
+                    <input type="text" class="form-control" id="subtemperature_morning" placeholder="请输入体温（早）">
+                </div>
+                <div class="form-group">
+                    <label for="subtemperature_moon">体温（午）</label>
+                    <input type="text" class="form-control" id="subtemperature_moon" placeholder="请输入体温（午）">
+                </div>
+                <div class="form-group">
+                    <label for="subtemperature_aftermoon">体温（晚）</label>
+                    <input type="text" class="form-control" id="subtemperature_aftermoon" placeholder="请输入体温（晚）">
+                </div>
+
+
+
+
+
+                <div class="form-group" style="height:20%;">
+
+                    <button id="submitform" class="btn-submit" type="button">提交</button>
+                </div>
+
+            </form>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

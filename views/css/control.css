@@ -1,0 +1,24 @@
+.pageheader{
+    padding-bottom: 50px;
+    margin: 65px 0 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+.hs{
+    color: #46b8da;
+}
+.sm{
+    color: #46b8da;
+}
+/*html, body,.container {height: 100%; }*/
+html,body {
+    background: #efefef;
+    padding: 0;
+    margin: 0;
+    height:100%;
+    width: 100%;
+}
+
+
+
+
+

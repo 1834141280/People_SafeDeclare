@@ -1,0 +1,108 @@
+body {
+    /*颜色这个看个人喜好*/
+  background-image: url("../image/img.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+    /*字体这个看个人喜好*/
+    font-family: sans-serif;
+  }
+  
+  /*主要是规定中间表单尺寸，调整到自己觉得好看就行了*/
+  .mainbody {
+
+    height: 500px;
+    width: 400px;
+  }
+  /*居中效果*/
+  .middle {
+    /*使左上角对应到父元素的中心*/
+    top: 50%;
+    left: 80%;
+    position: absolute;
+    /*向左向上偏移50%*/
+    transform: translate(-50%, -50%);
+  }
+  
+  .form-box {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background: rgb(203 227 227 / 46%);
+    /* 我觉得这个圆角大小刚刚好 */
+    border-radius: 40px;
+  }
+
+.input-normal {
+  width: 220px;
+  height: 38px;
+  margin: 30px auto;
+  padding: 0;
+  text-align: center;
+  border-radius: 20px;
+  outline: none;
+  display: block;
+  transition: 0.3s;
+  border: 1px solid #3836364d;
+  background: #8a6d3b00;
+}
+
+.btn-submit {
+  width: 100px;
+  height: 36px;
+  margin: auto;
+  font-size: 18px;
+  text-align: center;
+  color: #393838b8;
+  border-radius: 20px;
+  display: block;
+  background: rgb(214 248 194 / 0%);
+  transition: 0.3s;
+}
+  
+  .front {
+    height: 80%;
+    width: 100%;
+    transform: rotateY(0deg);
+  }
+  
+  /* 将back旋转180度，背面朝向用户，我这边选y轴的 */
+  .back {
+    transform: rotateY(-180deg);
+  }
+  
+  .front,
+  .back {
+    position: absolute;
+    /* 然后设置为背面朝向用户时不可见 */
+    backface-visibility: hidden;
+    /* 我觉得用linear顺滑一点 */
+    transition: 0.3s linear;
+  }
+  
+  /* 将front旋转180度 */
+  .middle-flip .front {
+    transform: rotateY(180deg);
+  }
+  /* 将back旋转180度 */
+  .middle-flip .back {
+    transform: rotateY(0deg);
+  }
+  
+  /* 我调整了一下，感觉还不错的样式，你可以改成其他的好看点的 */
+  p {
+    margin: 15px auto;
+    padding: 0;
+    font-size: 16px;
+    color: white;
+    display: block;
+    text-align: center;
+  }
+  a {
+    color: rgb(3, 100, 164);
+    cursor: pointer;
+  }
+  h1{
+    color:rgb(6, 6, 6);
+    text-align:center;
+  }

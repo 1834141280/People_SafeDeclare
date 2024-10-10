@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自动预警界面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-table-master/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="../css/remind.css">
+
+    <script type="text/javascript" src="../js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../bootstrap-table-master/dist/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="../js/remind.js"></script>
+</head>
+
+<body onload="ShowDanger()">
+    <div id="container">
+        <!-- 背景黑色遮罩 -->
+        <div id="hidden"></div>
+        <div id="box">
+            <!-- <strong id="close"></strong> -->
+            <img src="../image/x.png" width="150"  alt="需要预警人员" >
+            <div class="col-sm-12" style=" height:20%">
+                <label class="control-label">未填报人员：</label>
+                <p id="un_name" style=" height:12%" class="col-md-12"></p>
+            </div>
+
+
+            <div class="col-sm-12" style=" height:20%">
+                <label class="control-label">个人健康状况存在问题人员：</label>
+                <p id="danger_name" style=" height:12%" class="col-md-12"></p>
+            </div>
+            <!-- <span>输入账号：<input type="text" placeholder="输入账号"></span>
+            <span>输入密码：<input type="password" placeholder="输入密码"></span> -->
+            <input id="login" type="button" value="关闭">
+
+
+
+        </div>
+    </div>
+    <script>
+        var box = my$('box');
+        var hidden = my$('hidden');
+        var close = my$('close');
+        // function ShowDanger() {
+        
+        // }
+        login.onclick = function () {
+            // box.style.display = 'none';
+            // hidden.style.display = 'none';
+            window.location.replace("/control")
+            // // 关闭后恢复box到原来的默认位置
+            // box.style.top = '200px';
+            // box.style.left = '';
+        }
+        box.onmousedown = function (e) {
+            e = e || window.event;
+            // 盒子的位置
+            var x = getPage(e).pageX - box.offsetLeft;
+            var y = getPage(e).pageY - box.offsetTop;
+            document.onmousemove = function (e) {
+                e = e || window.event;
+                box.style.left = getPage(e).pageX - x + 'px';
+                box.style.top = getPage(e).pageY - y + 'px';
+            }
+        }
+        document.onmouseup = function () {
+            document.onmousemove = null;
+        }
+    </script>
+</body>
+
+</html>

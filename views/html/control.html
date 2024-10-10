@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>管理界面</title>
+    <link rel="stylesheet" href="../css/control.css" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-table-master/dist/bootstrap-table.min.css">
+
+    <script type="text/javascript" src="../js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../bootstrap-table-master/dist/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="../js/control.js"></script>
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <div class="container-fluid" style=" height:100%">
+        <div class="row" style=" height:20%">
+            <div class="col-md-12" style=" height:100%">
+                <div class="pageheader" style=" height:66%">
+                    <h1 align="center" class="hs">&emsp;疫情期间个人健康情况申报系统<small class="sm">&emsp;管理端</small></h1>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" style=" height:82%;width: 100%;text-align: center;margin:auto;">
+            <div class="col-md-12" style=" height:100%;text-align: center;margin:auto;">
+                <div class="panel panel-info" style=" height:95%;text-align: center;margin:auto;">
+                    <div class="panel-heading" style=" height:5% ;text-align: center;margin:auto;">
+                        操作面板
+                    </div>
+                    <div class="panel-body" style=" height:95% ;text-align: center;margin:auto;">
+                        <form class="form-inline" style=" height:100%">
+                            <div class="row" style="height: 5%;">
+                                <div class="col-sm-12">
+                                    <label class="control-label">查询用户填报信息：</label>
+                                </div>
+                            </div>
+                            <div class="row" style=" height:12%">
+                                <div class="col-sm-12">
+                                    <label class="control-label">用户名：</label><input id="chaxun" type="text"
+                                        class="form-control" style="width:47%">&emsp;&emsp;&emsp;
+                                    <button id="search" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#searchModal" type="button">查询</button>
+                                </div>
+                            </div>
+
+                            <div class="row" style="height: 5%;">
+                                <div class="col-sm-12">
+                                    <label class="control-label">添加填报信息：</label>
+                                </div>
+                            </div>
+                            <div class="row" style=" height:12%">
+                                <div class="col-sm-12">
+                                    <label class="control-label">用户名：</label><input id="tianjia" type="text"
+                                        class="form-control" style="width:47%">&emsp;&emsp;&emsp;
+                                    <button id="increase" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#increaseModal" type="button">添加</button>
+                                </div>
+                            </div>
+
+                            <div class="row" style="height: 5%;">
+                                <div class="col-sm-12">
+                                    <label class="control-label">修改用户信息：</label>
+                                </div>
+                            </div>
+                            <div class="row" style=" height:12%">
+                                <div class="col-sm-12">
+                                    <label class="control-label">用户名：</label><input id="xiugai" type="text"
+                                        class="form-control" style="width:47%">&emsp;&emsp;&emsp;
+                                    <button id="edit" type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#editModal">更改</button>
+                                </div>
+                            </div>
+
+                            <div class="row" style="height: 5%;">
+                                <div class="col-sm-12">
+                                    <label class="control-label">删除用户填报信息：</label>
+                                </div>
+                            </div>
+                            <div class="row" style=" height:12%">
+                                <div class="col-sm-12">
+                                    <label class="control-label">用户名：</label><input id="shanchu" type="text"
+                                        class="form-control" style="width:47%">&emsp;&emsp;&emsp;
+                                    <button id="delete" type="button" class="btn btn-primary">删除</button>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="row" style="height: 10%; text-align: center;">
+                                <button id="tianbao" class="btn btn-success" type="button">点击进行每日填报</button>
+                            </div>
+                            <div class="row" style="height: 10%; text-align: center;">
+                                <button id="tongji" class="btn btn-info" type="button">点击查看信息统计</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!-- 查询 -->
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">用户填报信息查询</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="username">用户名</label>
+                        <input id="username" type="text" class="form-control" disabled />
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input id="name" type="text" class="form-control" disabled />
+                        </div>
+                        <div class="form-group">
+                            <label for="idnumber">身份证号</label>
+                            <input id="idnumber" type="text" class="form-control" disabled />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phonenumber">手机号</label>
+                        <input id="phonenumber" type="text" class="form-control" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="city">城市</label>
+                        <input id="city" type="text" class="form-control" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="academy">社区选择</label>
+                        <input id="academy" type="text" class="form-control" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="high_region">七天内受否有高低风险旅居史、接触史</label>
+                        <input id="high_region" type="text" class="form-control" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="isolation">是否隔离观察</label>
+                        <input id="isolation" type="text" class="form-control" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="typical_symptoms">是否身体有疑似典型症状</label>
+                        <input id="typical_symptoms" type="text" class="form-control" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="fever">是否发热</label>
+                        <input id="fever" type="text" class="form-control" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="other">其他信息</label>
+                        <input id="other" type="text" class="form-control" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="temperature_morning">体温（早）</label>
+                        <input id="temperature_morning" type="text" class="form-control" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="temperature_moon">体温（午）</label>
+                        <input id="temperature_moon" type="text" class="form-control" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="temperature_aftermoon">体温（晚）</label>
+                        <input id="temperature_aftermoon" type="text" class="form-control" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="date">填报日期</label>
+                        <input id="date" type="text" class="form-control" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="write">当日是否填报</label>
+                        <input id="write" type="text" class="form-control" disabled />
+                    </div>
+
+
+
+
+                </div>
+                <!-- <div class="modal-body">
+                <input id="file1" type="file" name="file1" accept="*">
+            </div> -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <!-- <button type="button" class="btn btn-primary" onclick="editInfo()">上传</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 添加 -->
+    <div class="modal fade" id="increaseModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">用户填报信息添加</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="usernamein">用户名</label>
+                        <input id="usernamein" type="text" class="form-control" disabled />
+                        <div class="form-group">
+                            <label for="namein">姓名</label>
+                            <input id="namein" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="idnumberin">身份证号</label>
+                            <input id="idnumberin" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phonenumberin">手机号</label>
+                        <input id="phonenumberin" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="cityin">城市</label>
+                        <input id="cityin" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="academyin">社区选择</label>
+                        <input id="academyin" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="high_regionin">七天内受否有高低风险旅居史、接触史</label>
+                        <input id="high_regionin" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="isolationin">是否隔离观察</label>
+                        <input id="isolationin" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="typical_symptomsin">是否身体有疑似典型症状</label>
+                        <input id="typical_symptomsin" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="feverin">是否发热</label>
+                        <input id="feverin" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="otherin">其他信息</label>
+                        <input id="otherin" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="temperature_morningin">体温（早）</label>
+                        <input id="temperature_morningin" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="temperature_moonin">体温（午）</label>
+                        <input id="temperature_moonin" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="temperature_aftermoonin">体温（晚）</label>
+                        <input id="temperature_aftermoonin" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="datein">填报日期</label>
+                        <input id="datein" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="writein">当日是否填报</label>
+                        <input id="writein" type="text" class="form-control" />
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="IncreaseData()">添加</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 更改 -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">用户信息更改</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="usernameed">用户名</label>
+                        <input id="usernameed" type="text" class="form-control"  />
+                        <div class="form-group">
+                            <label for="nameed">姓名</label>
+                            <input id="nameed" type="text" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="idnumbered">身份证号</label>
+                            <input id="idnumbered" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phonenumbered">手机号</label>
+                        <input id="phonenumbered" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="cityed">城市</label>
+                        <input id="cityed" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="academyed">社区选择</label>
+                        <input id="academyed" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="high_regioned">七天内受否有高低风险旅居史、接触史</label>
+                        <input id="high_regioned" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="isolationed">是否隔离观察</label>
+                        <input id="isolationed" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="typical_symptomsed">是否身体有疑似典型症状</label>
+                        <input id="typical_symptomsed" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="fevered">是否发热</label>
+                        <input id="fevered" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="othered">其他信息</label>
+                        <input id="othered" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="temperature_morninged">体温（早）</label>
+                        <input id="temperature_morninged" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="temperature_mooned">体温（午）</label>
+                        <input id="temperature_mooned" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="temperature_aftermooned">体温（晚）</label>
+                        <input id="temperature_aftermooned" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="dateed">填报日期</label>
+                        <input id="dateed" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="writeed">当日是否填报</label>
+                        <input id="writeed" type="text" class="form-control"  />
+                    </div>
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="EditData()">更改</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>

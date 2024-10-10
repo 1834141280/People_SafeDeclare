@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css">
+
+  <link rel="stylesheet" href="../css/index.css">
+
+  <script src="../js/jquery-3.4.1.js"></script>
+  <script src="../js/index.js"></script>
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+  <style >
+    input::placeholder {
+      color: rgb(44, 43, 43);
+    }
+  </style>
+
+
+
+  <title>疫情期间个人健康情况申报系统</title>
+</head>
+
+
+<body>
+  <h1 align="center">疫情期间个人健康情况申报系统</h1>
+  <div class="mainbody middle">
+    <div class="form-box front">
+      <h1>用户登录</h1>
+
+
+      <input id="usernamesign" class="input-normal" type="text" placeholder="用户名(6-12)" />
+      <input id="passwordsign" class="input-normal" type="password" placeholder="密码(6-12)" />
+
+      <button id="submitsign" class="btn-submit" type="submit">登录</button>
+      <style>
+        a {
+          text-decoration: none
+        }
+      </style>
+
+      <div>
+        <p style="margin-top: 40px">If you don't have account.Please</p>
+        <p>Click here to <a id="signup">注册</a></p>
+        <script type="text/javascript">
+
+          // 点击sigup触发翻转样式
+          $("#signup").click(function () {
+            $(".middle").toggleClass("middle-flip");
+          });
+
+
+        </script>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="form-box back">
+      <div>
+        <h1>用户注册</h1>
+      </div>
+      <div>
+        <select class="input-normal" typeof="text" id="identityregister" vlue="选择身份">
+          <option value='0' selected>选择身份</option>
+          <option>系统管理员</option>
+          <option>用户</option>
+        </select>
+        <input id="usernameregister" class="input-normal" type="text" placeholder="用户名(即学工号)" />
+        <input id="passwordregister" class="input-normal" type="password" placeholder="密码(6-12)" />
+        <input id="useremailregister" class="input-normal" type="text" placeholder="邮箱" />
+        <button id="submitregister" class="btn-submit" type="submit">注册</button>
+      </div>
+      <div>
+        <p style="margin-top: 20px">Have a account ? You can</p>
+        <p>Click here to <a id="login">登陆</a></p>
+        <script type="text/javascript">
+          // 点击login触发翻转样式
+          $("#login").click(function () {
+            $(".middle").toggleClass("middle-flip");
+          });
+          console.log("111")
+        </script>
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
